@@ -74,11 +74,11 @@ This repo collects short, focused notes and runnable examples I use to re-sharpe
 
 ### Testing
 
-- Vitest/Jest (unit), Testing Library (component), Playwright (E2E)
+- Bun test (unit), Testing Library (component), Playwright (E2E)
 
 ### Tooling & Build
 
-- Vite, esbuild, npm/pnpm, bundling, code splitting, module formats
+- Vite, esbuild, Bun bundler, bundling, code splitting, module formats
 
 ### Docker
 
@@ -115,5 +115,11 @@ cd web-fundamentals-2026
 Open any `.html` file in a browser, or serve locally:
 
 ```bash
-npx serve .
+bunx serve .
+```
+
+Run JS/TS examples:
+
+```bash
+bun run <file>
 ```
