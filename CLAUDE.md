@@ -37,7 +37,7 @@ Each directory will contain short, focused notes and runnable examples for that 
 ## Conventions
 
 - Examples should be **minimal and idiomatic** — demonstrate one concept clearly
-- Comments explaining *why* something works are encouraged (this is a learning repo)
+- Comments explaining _why_ something works are encouraged (this is a learning repo)
 - Prefer canonical patterns over clever ones
 - Static HTML/CSS/JS examples need no build step; open directly in browser or via `bunx serve .`
 - Use **Bun** as the JS runtime for `.js`/`.ts` scripts and test runner
