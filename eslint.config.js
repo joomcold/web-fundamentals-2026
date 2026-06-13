@@ -1,6 +1,7 @@
 import js from '@eslint/js'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
+import html from '@html-eslint/eslint-plugin'
 import { defineConfig } from 'eslint/config'
 
 export default defineConfig([
@@ -12,9 +13,17 @@ export default defineConfig([
     rules: {
       'no-var': 'error',
       'prefer-const': 'error',
-      'eqeqeq': 'error',
+      eqeqeq: 'error',
       'no-console': 'warn',
     },
   },
   tseslint.configs.recommended,
+  {
+    files: ['**/*.html'],
+    plugins: { '@html-eslint': html },
+    language: '@html-eslint/html',
+    rules: {
+      ...html.configs['flat/recommended'].rules,
+    },
+  },
 ])
