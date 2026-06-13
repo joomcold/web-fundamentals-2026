@@ -17,13 +17,18 @@ export default defineConfig([
       'no-console': 'warn',
     },
   },
-  tseslint.configs.recommended,
+  ...tseslint.config({
+    files: ['**/*.{ts,mts,cts}'],
+    extends: [tseslint.configs.recommended],
+  }),
   {
     files: ['**/*.html'],
     plugins: { '@html-eslint': html },
     language: '@html-eslint/html',
     rules: {
       ...html.configs['flat/recommended'].rules,
+      '@html-eslint/indent': ['error', 2],
+      '@html-eslint/quotes': ['error', 'double'],
     },
   },
 ])
