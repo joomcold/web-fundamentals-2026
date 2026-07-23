@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-Personal refresher on web development — short notes and runnable examples across HTML, CSS, JS, TS, frameworks, databases, ORM, security, Web APIs, performance, testing, tooling, and Docker. Focus is **educational clarity**.
+A personal, self-directed refresher on web development — short notes and runnable examples that keep my fundamentals sharp and let me explore a few technologies I would like to get better at. Focus is **educational clarity**, not production-hardening.
+
+Topics span the core web platform (HTML, CSS, JavaScript, TypeScript), frontend (Vue, Tailwind, Web APIs), backend (Go, Gin), data (databases, data access), quality & security (security, testing, performance), and ops (tooling, Docker, CI/CD). See `README.md` for the full grouped list.
 
 ## Running Examples
 
@@ -14,6 +16,9 @@ bunx serve .
 
 # Run a JS/TS file directly
 bun run <file>
+
+# Run a Go file
+go run <file>
 
 # Run tests (when added)
 bun test
@@ -27,12 +32,15 @@ open html/index.html
 Each topic is a standalone directory (not dependent on others):
 
 ```text
-html/ css/ javascript/ typescript/ frameworks/
-databases/ orm/ security/ web-apis/ performance/
-testing/ tooling/ docker/
+html/ css/ javascript/ typescript/
+vue/ tailwind/ web-apis/
+go/ gin/
+databases/ data-access/
+security/ testing/ performance/
+tooling/ docker/ ci-cd/
 ```
 
-Each directory will contain short, focused notes and runnable examples for that topic.
+Each directory holds short, focused notes and runnable examples for that topic. `README.md` groups these into domains (Core, Frontend, Backend, Data, Quality & Security, Ops) for navigation.
 
 ## Conventions
 
@@ -41,4 +49,21 @@ Each directory will contain short, focused notes and runnable examples for that 
 - Prefer canonical patterns over clever ones
 - Static HTML/CSS/JS examples need no build step; open directly in browser or via `bunx serve .`
 - Use **Bun** as the JS runtime for `.js`/`.ts` scripts and test runner
+- Run **ESLint** and **Prettier** before considering a change done
 - **Weave security notes into each topic** where relevant (e.g., XSS in DOM examples, SQL injection in DB examples, timing attacks in auth examples) — not just in the `security/` directory
+- **README TOC:** the editor auto-generates the Table of Contents from headings, so every topic must be a heading (`####`), never a bullet, or it silently drops out of the TOC. Keep the TOC mirroring the full Topics tree — every domain and every topic.
+## Commit Messages
+
+Use Conventional Commit prefixes — `type: short summary` in the imperative mood (~50 chars):
+
+- `feat:` — a new topic, note, or runnable example
+- `fix:` — correct a broken example or mistake
+- `docs:` — README / CLAUDE.md or other prose
+- `refactor:` — restructure without changing behavior
+- `test:` — add or adjust tests
+- `chore:` — setup, config, tooling, dependencies
+- `ci:` — CI/CD pipeline changes
+
+**Subject only** for setup/config and small, self-evident changes — the diff speaks for itself. **Add a body** only when there's a *why* the diff can't show (a decision, trade-off, or workaround) or the change is broad. Never write a body that just restates the diff.
+
+Draft the message and wait for approval before running `git commit`.
