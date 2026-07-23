@@ -37,7 +37,7 @@ A personal refresher on web development — concise notes, code snippets, and qu
 
 A hands-on reference I keep to stay sharp across web development — one small, runnable example per concept, each topic standalone.
 
-It comes from two habits kept side by side: periodically **reviewing the fundamentals** so nothing quietly goes rusty, and **deliberately exploring technologies I would like to get better at** (Go, sqlc, Tailwind, and the like). Notes lean toward explaining *why* something works, not just how.
+It comes from two habits kept side by side: periodically **reviewing the fundamentals** so nothing quietly goes rusty, and **deliberately exploring technologies I would like to get better at** (Go, sqlc, Tailwind, and the like). Notes lean toward explaining _why_ something works, not just how.
 
 ## Topics
 

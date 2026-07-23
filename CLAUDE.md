@@ -50,8 +50,10 @@ Each directory holds short, focused notes and runnable examples for that topic. 
 - Static HTML/CSS/JS examples need no build step; open directly in browser or via `bunx serve .`
 - Use **Bun** as the JS runtime for `.js`/`.ts` scripts and test runner
 - Run **ESLint** and **Prettier** before considering a change done
+- **Dependencies:** never add anything to `package.json` (e.g. via `bun add`) without explicit approval first — propose the package and the reason, then wait
 - **Weave security notes into each topic** where relevant (e.g., XSS in DOM examples, SQL injection in DB examples, timing attacks in auth examples) — not just in the `security/` directory
 - **README TOC:** the editor auto-generates the Table of Contents from headings, so every topic must be a heading (`####`), never a bullet, or it silently drops out of the TOC. Keep the TOC mirroring the full Topics tree — every domain and every topic.
+
 ## Commit Messages
 
 Use Conventional Commit prefixes — `type: short summary` in the imperative mood (~50 chars):
@@ -64,6 +66,6 @@ Use Conventional Commit prefixes — `type: short summary` in the imperative moo
 - `chore:` — setup, config, tooling, dependencies
 - `ci:` — CI/CD pipeline changes
 
-**Subject only** for setup/config and small, self-evident changes — the diff speaks for itself. **Add a body** only when there's a *why* the diff can't show (a decision, trade-off, or workaround) or the change is broad. Never write a body that just restates the diff.
+**Subject only** for setup/config and small, self-evident changes — the diff speaks for itself. **Add a body** only when there's a _why_ the diff can't show (a decision, trade-off, or workaround) or the change is broad. Never write a body that just restates the diff.
 
 Draft the message and wait for approval before running `git commit`.
