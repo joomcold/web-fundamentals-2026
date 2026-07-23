@@ -1,0 +1,22 @@
+name: CI
+
+# Runs on direct pushes to main (this repo's setup flow) and on every PR,
+# so the same checks gate a PR once a branch-based flow is used.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Lint & format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+      - run: bun run format:check
