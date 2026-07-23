@@ -54,6 +54,12 @@ Each directory holds short, focused notes and runnable examples for that topic. 
 - **Weave security notes into each topic** where relevant (e.g., XSS in DOM examples, SQL injection in DB examples, timing attacks in auth examples) — not just in the `security/` directory
 - **README TOC:** the editor auto-generates the Table of Contents from headings, so every topic must be a heading (`####`), never a bullet, or it silently drops out of the TOC. Keep the TOC mirroring the full Topics tree — every domain and every topic.
 
+## Branches
+
+`main` is the only long-lived branch. Work on short-lived branches named `type/kebab-summary`, using the same types as commits (`feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `ci`), lowercase, no spaces. Delete the branch after it merges.
+
+Examples: `feat/go-http-server`, `docs/readme-domains`, `chore/add-prettier`, `fix/css-grid-typo`.
+
 ## Commit Messages
 
 Use Conventional Commit prefixes — `type: short summary` in the imperative mood (~50 chars):
