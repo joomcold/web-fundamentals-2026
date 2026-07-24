@@ -58,7 +58,9 @@ Each directory holds short, focused notes and runnable examples for that topic. 
 
 `main` is the only long-lived branch. Work on short-lived branches named `type/kebab-summary`, using the same types as commits (`feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `ci`), lowercase, no spaces. Delete the branch after it merges.
 
-Examples: `feat/go-http-server`, `docs/readme-domains`, `chore/add-prettier`, `fix/css-grid-typo`.
+When the work tracks a GitHub issue, include the issue number: `type/<issue>-kebab-summary`.
+
+Examples: `feat/go-http-server`, `docs/readme-domains`, `fix/css-grid-typo`, `feat/42-token-refresh` (from issue #42).
 
 ## Commit Messages
 
@@ -75,3 +77,9 @@ Use Conventional Commit prefixes — `type: short summary` in the imperative moo
 **Subject only** for setup/config and small, self-evident changes — the diff speaks for itself. **Add a body** only when there's a _why_ the diff can't show (a decision, trade-off, or workaround) or the change is broad. Never write a body that just restates the diff.
 
 Draft the message and wait for approval before running `git commit`.
+
+## Pull Requests
+
+PR **titles** follow the same Conventional Commit format as commit messages (`type: summary`, lowercase, imperative) — for a clean, scannable PR list. When the PR tracks an issue, append its number as a suffix so it shows in the PR list: `type: summary (#42)` — keep the type first, never prefix (`[#42] feat:` breaks the format). The PR **body** is freeform: explain what and why, and link the issue with a closing keyword (`Closes #42`) so it auto-closes on merge.
+
+Examples: `feat: add css grid examples`, `fix: correct broken flexbox demo (#57)`.
