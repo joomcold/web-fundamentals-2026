@@ -32,6 +32,7 @@ A personal refresher on web development — concise notes, code snippets, and qu
       - [Docker](#docker)
       - [CI/CD](#cicd)
   - [Getting Started](#getting-started)
+  - [Conventions](#conventions)
 
 ## Overview
 
@@ -139,3 +140,16 @@ Run JS/TS examples:
 ```bash
 bun run <file>
 ```
+
+## Conventions
+
+Git workflow at a glance:
+
+| Thing      | Pattern                                               | Example                         |
+| ---------- | ----------------------------------------------------- | ------------------------------- |
+| Branch     | `type/kebab-summary` (add the issue number if any)    | `feat/42-token-refresh`         |
+| Commit     | `type: summary` — Conventional Commits, imperative    | `feat: add token refresh`       |
+| PR title   | `type: summary (#issue)`                              | `feat: add token refresh (#42)` |
+| Issue link | `Closes #issue` in the PR body (auto-closes on merge) | `Closes #42`                    |
+
+Types: `feat` `fix` `docs` `refactor` `test` `chore` `ci`.
